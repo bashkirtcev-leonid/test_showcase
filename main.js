@@ -1,15 +1,14 @@
-import Vue from 'vue';
+import Vue from './node_modules/vue/dist/vue.esm';
+import ProductList from './components/ProductList.vue';
 
-var element = document.createElement('div');
+
+/*var element = document.createElement('div');
 element.id = 'app';
-document.body.appendChild(element);
+document.body.appendChild(element);*/
 
-var app = new Vue({
+const app = new Vue({
 	el: '#app',
 	data: {
 		name: 'example'
-	},
-	render: function (createElement) {
-		return createElement('div', this.name);
 	}
 });
