@@ -3,7 +3,7 @@
     "name": "test_app_showcase",
     "scripts": {
         "test": "echo 'Test success'",
-        "build": "webpack"
+        "build": "webpack --mode development"
     },
     "dependencies": {
         "vue": "^2.5.22"
