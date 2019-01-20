@@ -1,16 +1,16 @@
 <template>
 	<div>
-		<ProductList/>
 		{{ msg }}
+		<router-view></router-view>
 	</div>
 </template>
 
 <<script>
-import ProductList from './ProductList.vue'
+//import ProductList from './ProductList.vue'
 
 export default {
 	components: {
-		ProductList
+		//ProductList
 	},
 	data() {
 		return {

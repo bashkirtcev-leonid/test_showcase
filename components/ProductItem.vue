@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div @click='onClick'>
 		<span>
 			{{product.name}}
 		</span>
@@ -14,6 +14,16 @@
 
 <script>
 export default {
-	props: ['product']
+	props: ['product'],
+	methods: {
+		onClick: function () {
+			this.$router.push({
+				name: 'productCard',
+				params: {
+					id: this.product.id
+				}
+			});
+		}
+	}
 }
 </script>

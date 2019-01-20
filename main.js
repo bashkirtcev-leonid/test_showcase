@@ -1,6 +1,7 @@
 import Vue from './node_modules/vue/dist/vue.esm';
 import App from './components/App.vue';
-import store from './store'
+import store from './store';
+import router from './route';
 
 const app = new Vue({
 	el: '#app',
@@ -8,5 +9,6 @@ const app = new Vue({
 		name: 'example'
 	},
 	store,
+	router,
 	render: h => h(App)
 });
