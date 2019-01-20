@@ -1,5 +1,5 @@
 export default {
-    dataProducts: [
+    list: [
         {
             "id": "5b2760ac4613bc8ecb5693f6",
             "name": "name4",

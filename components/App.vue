@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<ProductList></ProductList>
-		{{msg}}
+		<ProductList/>
+		{{ msg }}
 	</div>
 </template>
 

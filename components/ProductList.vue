@@ -1,18 +1,17 @@
 <template>
 	<div>
-		{{fakeContent}}
+		
 	</div>
 </template>
 
 
 <script>
-//import Vue from './node_modules/vue/dist/vue.esm';
+import { mapState } from 'vuex'
+import ProductItem from './ProductItem.vue';
 
 export default {
-	data() {
-		return {
-			fakeContent: 'Пустой список'
-		}
-	}
+	computed: mapState({
+		products: state => state.products
+	}),
 }
 </script>
