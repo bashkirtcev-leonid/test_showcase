@@ -1,32 +1,45 @@
 <template>
 	<div class="header">
 		<div class="left-block">
-			<i class="home"/>
+			<div @click='onClickHome' class="icon home">
+			</div>
 		</div>
 		<div class="right-block">
-			<i class="basket"/>
+			<div @click='onClickBasket' class="icon basket">
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
 export default {
+	methods: {
+		onClickHome: function () {
+			this.$router.push({
+				name: 'productList'
+			});
+		},
+		onClickBasket: function () {
+			// Здесь добавить хитрость на показ компонента корзины
+		}
+	}
 }
 </script>
 
 <style scoped>
 .header {
 	height: 64px;
+	width: 100%;
 }
 .left-block {
 	left: 0;
-	display: inline-block;
+	float: left;
 }
 .right-block {
 	right: 0;
-	display: inline-block;
+	float: right;
 }
-.header i {
+.header .icon {
 	width: 32px;
 	height: 32px;
 }
