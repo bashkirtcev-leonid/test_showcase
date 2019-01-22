@@ -1,14 +1,26 @@
 <template>
 	<div>
-		<div>
-			
+		<div v-if="orders.length > 0">
+			<OrderItem 
+				v-for="order in orders"
+				v-bind:key="order.product.id"
+				v-bind:order="order"/>
+		</div>
+		<div v-else>
+			Корзина пустая
 		</div>
 	</div>
 </template>
 
 <script>
-export default {
+import OrderItem from './OrderItem.vue';
 
+export default {
+	computed: {
+		orders: function () {
+			return this.$store.orders;
+		}
+	}
 }
 </script>
 

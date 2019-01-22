@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import PopupShoppingBasket from './PopupShoppingBasket.vue';
+
 export default {
 	methods: {
 		onClickHome: function () {
@@ -20,7 +22,7 @@ export default {
 			});
 		},
 		onClickBasket: function () {
-			// Здесь добавить хитрость на показ компонента корзины
+			 this.$modal.show(PopupShoppingBasket);
 		}
 	}
 }

@@ -1,7 +1,10 @@
 <template>
 	<div>
 		<Header/>
+
 		<router-view></router-view>
+
+		<modals-container/>
 	</div>
 </template>
 
