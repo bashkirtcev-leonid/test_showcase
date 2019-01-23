@@ -28,18 +28,70 @@ export default new Vuex.Store({
 	mutations: {
 		addShopInList: function (state, shop) {
 			state.shoppingBasket.push(shop);
+		},
+		decrement: function (state, idProduct) {
+			state.shoppingBasket
+				.find(item => (item.id ===idProduct))
+				.count--;
+		},
+		increment: function (state, idProduct) {
+			state.shoppingBasket
+				.find(item => (item.id ===idProduct))
+				.count++;
+		},
+		removeOrder: function (state, idProduct) {
+			state.shoppingBasket.splice(
+				state.shoppingBasket
+					.findIndex(item => (item.id ===idProduct)), 1
+			);
+		},
+		clearList: function (state) {
+			state.shoppingBasket = [];
 		}
 	},
 	actions: {
 		clearBasket: function () {
 
 		},
-		addShoppingInList: function ({ commit, state}, shop) {
+		addShoppingInList: function ({ commit }, shop) {
 			this.commit('addShopInList', shop);
-			basket.setList(state.shoppingBasket);
+			basket.setList(this.state.shoppingBasket.map(function (item) {
+				return {
+					id: item.id,
+					count: item.count
+				};
+			}));
 		},
-		changeShoppingInList: function () {
-			
+		decrement: function ({commit}, idProduct) {
+			this.commit('decrement', idProduct);
+			basket.setList(this.state.shoppingBasket.map(function (item) {
+				return {
+					id: item.id,
+					count: item.count
+				};
+			}));
+		},
+		increment: function ({commit}, idProduct) {
+			this.commit('increment', idProduct);
+			basket.setList(this.state.shoppingBasket.map(function (item) {
+				return {
+					id: item.id,
+					count: item.count
+				};
+			}));
+		},
+		removeOrder: function ({commit}, idProduct) {
+			this.commit('removeOrder', idProduct);
+			basket.setList(this.state.shoppingBasket.map(function (item) {
+				return {
+					id: item.id,
+					count: item.count
+				};
+			}));
+		},
+		clearList: function ({commit}) {
+			this.commit('clearList');
+			basket.clearBasket();
 		}
 	}
 })

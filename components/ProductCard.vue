@@ -44,13 +44,12 @@ export default {
 	},
 	methods: {
 		addInBasket: function () {
-			this.$store.dispatch({
-				type: 'addShoppingInList',
-				shop: {
+			this.$store.dispatch('addShoppingInList',
+				{
 					id: this.product.id,
 					count: 1
 				}
-			});
+			);
 		}
 	}
 }
