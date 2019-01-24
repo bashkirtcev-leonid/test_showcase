@@ -3,9 +3,7 @@
 		<span>
 			{{product.name}}
 		</span>
-		<span>
-			Здесь будет изображение
-		</span>
+		<img :src="`${product.cover}`"/>
 		<span>
 			{{product.price}}
 		</span>
