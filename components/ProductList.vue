@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="product-list">
 		<ProductItem 
 			v-for="product in products"
 			v-bind:key="product.id"
@@ -16,8 +16,17 @@ export default {
 	components: {
 		ProductItem
 	},
-	computed: mapState({
-		products: state => state.products
-	}),
+	computed: {
+		products: function () {
+			return this.$store.getters.randomListProducts;
+		}
+	},
 }
 </script>
+
+<style scoped>
+	.product-list {
+		width: 100%;
+		height: 500px;
+	}
+</style>

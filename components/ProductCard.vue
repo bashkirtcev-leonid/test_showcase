@@ -1,25 +1,23 @@
 <template>
 	<div>
 		<div v-if="product !== null">
-			Карточка продукта:
-				<span>
-					{{product.name}}
-				</span>
-				<span>
-					Здесь будет изображение
-				</span>
-				<span>
-					{{product.price}}
-				</span>
-				<span>
+			<div>
+				Карточка продукта {{product.name}}. Цена: {{product.price}}.
+			</div>
+			<img :src="`${product.cover}`"/>
+			<div>
+				<div>
 					{{product.description}}
-				</span>
+				</div>
 				<div v-if="!productInBasket">
-					<button @click="addInBasket"/>
+					<div @click="addInBasket" class="button">
+						Добавить товар в корзину
+					</div>
 				</div>
 				<div v-else>
 					Товар уже в корзине
 				</div>
+			</div>
 		</div>
 		<div v-else>
 			Продукт не найден
@@ -55,3 +53,16 @@ export default {
 }
 </script>
 
+<style scoped>
+	.button {
+		height: 24px;
+		padding: 4px;
+		border-radius: 4px;
+		background-color: greenyellow;
+		width: max-content;
+	}
+	img {
+		width: 400px;
+		height: 400px;
+	}
+</style>

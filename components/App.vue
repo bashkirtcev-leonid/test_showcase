@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="main">
 		<Header/>
 
 		<router-view></router-view>
@@ -21,3 +21,11 @@ export default {
 	},
 }
 </script>
+
+<style scoped>
+	.main {
+		width: 1280px;
+		height: 800px;
+		overflow: scroll;
+	}
+</style>

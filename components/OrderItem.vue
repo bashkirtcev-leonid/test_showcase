@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="order-item">
 		{{order.product.name}}
 		<div>
 			<div @click="decrement">
@@ -35,6 +35,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+	.order-item {
+		margin: 4px;
+		padding: 8px;
+		border: 2px black solid;
+	}
 </style>
