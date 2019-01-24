@@ -2,10 +2,12 @@
 	<div class="header">
 		<div class="left-block">
 			<div @click='onClickHome' class="icon home">
+				Домой
 			</div>
 		</div>
 		<div class="right-block">
 			<div @click='onClickBasket' class="icon basket">
+				Корзина
 			</div>
 		</div>
 	</div>
@@ -22,7 +24,13 @@ export default {
 			});
 		},
 		onClickBasket: function () {
-			 this.$modal.show(PopupShoppingBasket);
+			 this.$modal.show(PopupShoppingBasket,
+			 {
+				 text: ''
+			 },
+			 {
+				 scrollable: true
+			 });
 		}
 	}
 }
@@ -42,7 +50,7 @@ export default {
 	float: right;
 }
 .header .icon {
-	width: 32px;
+	width: auto;
 	height: 32px;
 }
 .home {

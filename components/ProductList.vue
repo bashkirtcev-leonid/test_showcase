@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="product-list">
 		<ProductItem 
 			v-for="product in products"
 			v-bind:key="product.id"
@@ -23,3 +23,10 @@ export default {
 	},
 }
 </script>
+
+<style scoped>
+	.product-list {
+		width: 100%;
+		height: 500px;
+	}
+</style>

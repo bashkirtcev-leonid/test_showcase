@@ -1,17 +1,17 @@
 <template>
 	<div>
 		<div v-if="orders.length > 0">
+			<div @click="print" class="button">
+				Печатай
+			</div>
+			<div @click="clearList" class="button">
+				Очистить
+			</div>
 			<div id='printArea'>
 				<OrderItem 
 					v-for="order in orders"
 					v-bind:key="order.product.id"
 					v-bind:order="order"/>
-			</div>
-			<div @click="print">
-				Печатай
-			</div>
-			<div @click="clearList">
-				Очистить
 			</div>
 		</div>
 		<div v-else>
@@ -45,6 +45,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+	.button {
+		height: 24px;
+		padding: 4px;
+		border-radius: 4px;
+		background-color: greenyellow;
+		width: max-content;
+	}
 </style>
