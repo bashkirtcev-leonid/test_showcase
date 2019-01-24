@@ -23,6 +23,28 @@ export default new Vuex.Store({
 				return product;
 			})
 			.filter(order => !!order);
+		},
+		randomListProducts: state => {
+			const length = 1 + Math.round(9 * Math.random());
+			let list = [];
+			let usedIndexs = [];
+
+			if (length < state.products.length) {
+				state.products.forEach(function (item, index) {
+					usedIndexs.push(index);
+				});
+				while (length < usedIndexs.length) {
+					let removedIndex = Math.round((usedIndexs.length - 1) * Math.random());
+					usedIndexs.splice(removedIndex, 1);
+				}
+				list = state.products.filter(function (product, index) {
+					return usedIndexs.includes(index);
+				});
+			} else {
+				list = state.products;
+			}
+
+			return list;
 		}
 	},
 	mutations: {

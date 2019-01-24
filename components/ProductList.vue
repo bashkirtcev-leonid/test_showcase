@@ -16,8 +16,10 @@ export default {
 	components: {
 		ProductItem
 	},
-	computed: mapState({
-		products: state => state.products
-	}),
+	computed: {
+		products: function () {
+			return this.$store.getters.randomListProducts;
+		}
+	},
 }
 </script>
