@@ -1,16 +1,18 @@
 <template>
 	<div>
-		{{ msg }}
+		<Header/>
+
 		<router-view></router-view>
+
+		<modals-container/>
 	</div>
 </template>
 
 <<script>
-//import ProductList from './ProductList.vue'
-
+import Header from './Header.vue';
 export default {
 	components: {
-		//ProductList
+		Header
 	},
 	data() {
 		return {
