@@ -38,7 +38,6 @@ export default {
 			this.$store.dispatch('clearList');
 		},
 		print: function () {
-			//this.$htmlToPaper('printArea');
 			PHE.printElement(document.getElementById('printArea'));
 		}
 	}
